@@ -59,26 +59,26 @@ namespace NGANHANG.Forms
 
         private void btnKhachHang_ItemClick(object sender, ItemClickEventArgs e)
         {
-            /*Form frm = this.CheckExists(typeof(KhachHang));
+            Form frm = this.CheckExists(typeof(KhachHang));
             if (frm != null) frm.Activate();
             else
             {
                 Program.formKhachHang = new KhachHang();
                 Program.formKhachHang.MdiParent = this;
                 Program.formKhachHang.Show();
-            }*/
+            }
         }
 
         private void btnNhanVien_ItemClick(object sender, ItemClickEventArgs e)
         {
-           /* Form frm = this.CheckExists(typeof(NhanVien));
+            Form frm = this.CheckExists(typeof(NhanVien));
             if (frm != null) frm.Activate();
             else
             {
                 Program.formNhanVien = new NhanVien();
                 Program.formNhanVien.MdiParent = this;
                 Program.formNhanVien.Show();
-            }*/
+            }
         }
 
         private void btnGiaoDich_ItemClick(object sender, ItemClickEventArgs e)

@@ -12,31 +12,38 @@ namespace NGANHANG.Process
     {
         public static int KiemTraMaNhanVien(string maNV)
         {
-
+            int result = 0;
             using (SqlConnection conn = new SqlConnection(Program.connectionstring))
-            using (SqlCommand cmd = new SqlCommand("SP_KiemTraMaNhanVien", conn))
+            using (SqlCommand cmd = new SqlCommand("frmNhanVien_DuplicateMaNhanVien", conn))
             {
-
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("MANV", maNV);
+                cmd.Parameters.AddWithValue("@MANV", maNV);
 
-                var returnParameter = cmd.Parameters.Add("@result", SqlDbType.Int);
+                // Định nghĩa tham số đầu ra
+                SqlParameter returnParameter = new SqlParameter();
+                returnParameter.ParameterName = "@Result";
+                returnParameter.SqlDbType = SqlDbType.Int;
                 returnParameter.Direction = ParameterDirection.ReturnValue;
+                cmd.Parameters.Add(returnParameter);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
+
+                // Lấy giá trị của tham số đầu ra
+                result = (int)returnParameter.Value;
+
                 conn.Close();
-                return (int)returnParameter.Value;
             }
 
-
+            return result;
         }
+
 
         public static int KiemTraTrangThaiXoa(string maNV)
         {
 
             using (SqlConnection conn = new SqlConnection(Program.connectionstring))
-            using (SqlCommand cmd = new SqlCommand("SP_KiemTraTrangThaiXoa", conn))
+            using (SqlCommand cmd = new SqlCommand("frmNhanVien_CheckDeleteStatus", conn))
             {
 
                 cmd.CommandType = CommandType.StoredProcedure;

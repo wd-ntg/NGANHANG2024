@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using DevExpress.UserSkins;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
+using System.Data;
 
 namespace NGANHANG
 {
@@ -34,8 +35,9 @@ namespace NGANHANG
         public static String mGroup = "";
         public static String mHoten = "";
 
-  /*      public static NhanVien formNhanVien;
-        public static KhachHang formKhachHang;*/
+        public static NhanVien formNhanVien;
+        public static KhachHang formKhachHang;
+
 
         /// <summary>
         /// The main entry point for the application.

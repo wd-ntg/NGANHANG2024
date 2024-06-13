@@ -33,5 +33,49 @@ namespace NGANHANG.Properties {
                 return ((string)(this["NGANHANGConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-B60UFJ89\\MSSQLSERVER10;Initial Catalog=NGANHANG;User ID=sa;Pas" +
+            "sword=123456")]
+        public string NGANHANG_TANDINH {
+            get {
+                return ((string)(this["NGANHANG_TANDINH"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-B60UFJ89\\MSSQLSERVER11;Initial Catalog=NGANHANG;User ID=sa;Pas" +
+            "sword=123456")]
+        public string NGANHANG_TRACUU {
+            get {
+                return ((string)(this["NGANHANG_TRACUU"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-B60UFJ89\\MSSQLSERVER09;Initial Catalog=NGANHANG;User ID=sa;Pas" +
+            "sword=123456")]
+        public string NGANHANG_BENTHANH {
+            get {
+                return ((string)(this["NGANHANG_BENTHANH"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-B60UFJ89\\MSSQLSERVER09;Initial Catalog=NGANHANG;User ID=sa;Pas" +
+            "sword=123456")]
+        public string NGANHANGConnectionString1 {
+            get {
+                return ((string)(this["NGANHANGConnectionString1"]));
+            }
+        }
     }
 }

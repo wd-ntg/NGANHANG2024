@@ -14,7 +14,7 @@ namespace NGANHANG.Process
         {
 
             using (SqlConnection conn = new SqlConnection(Program.connectionstring))
-            using (SqlCommand cmd = new SqlCommand("SP_KiemTraTaoTaiKhoan", conn))
+            using (SqlCommand cmd = new SqlCommand("frmKhachHang_ExistsAccount", conn))
             {
 
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -37,7 +37,7 @@ namespace NGANHANG.Process
         {
 
             using (SqlConnection conn = new SqlConnection(Program.connectionstring))
-            using (SqlCommand cmd = new SqlCommand("SP_KiemTraSoTaiKhoan", conn))
+            using (SqlCommand cmd = new SqlCommand("frmMoTaiKhoanKH_duplicateSoTK", conn))
             {
 
                 cmd.CommandType = CommandType.StoredProcedure;

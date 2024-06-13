@@ -89,9 +89,25 @@ namespace NGANHANG.Forms
         private void comboBox1_SelectedValueChanged_1(object sender, EventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
+
+            Console.WriteLine(comboBox.Text);
+
             if (comboBox.SelectedIndex > -1)
+
             {
+                Program.TenServer = "LAPTOP-B60UFJ89\\MSSQLSERVER09";
+
+                if (comboBox.SelectedIndex == 0)
+                {
+                    Program.TenServer = "LAPTOP-B60UFJ89\\MSSQLSERVER09";
+                }
+                else
+                {
+                    Program.TenServer = "LAPTOP-B60UFJ89\\MSSQLSERVER10";
+                }
                 Program.TenServer = comboBox.SelectedValue.ToString();
+
+                Console.WriteLine(Program.TenServer);
             }
         }
 

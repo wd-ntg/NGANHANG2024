@@ -68,7 +68,7 @@ namespace NGANHANG.Forms
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 24);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Chi Nhánh";
+            this.label1.Text  = "Chi Nhánh";
             // 
             // label2
             // 

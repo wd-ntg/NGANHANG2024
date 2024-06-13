@@ -12,8 +12,14 @@ namespace NGANHANG.Process
     class db_connect
     {
         public static bool KTDangNhap(String loginName, String password)
+
+       
         {
-            Program.connectionstring = "Server=" + Program.TenServer + ";initial catalog=" + Program.TenDataBase
+            Console.WriteLine(loginName);
+            Console.WriteLine(password);
+            Console.WriteLine(Program.TenServer);
+            Console.WriteLine(Program.TenDataBase);
+            Program.connectionstring = "Data Source=" + Program.TenServer + ";Initial Catalog=" + Program.TenDataBase
                                                + ";User id=" + loginName + ";Password=" + password;
             SqlConnection sqlConnection = new SqlConnection(Program.connectionstring);
             try
@@ -24,8 +30,10 @@ namespace NGANHANG.Process
                 return true;
 
             }
-            catch
+            catch (SqlException ex)
             {
+                MessageBox.Show(ex.Message + "Lỗi đăng nhập vào server");
+                Console.WriteLine(ex.Message + "Lỗi đăng nhập vào server");
                 return false;
             }
         }
@@ -45,11 +53,14 @@ namespace NGANHANG.Process
             {
                 Program.myReader = sqlcmd.ExecuteReader();
 
+                Console.WriteLine(Program.myReader + "Program Reader");
+
             }
             catch (SqlException ex)
             {
                 conn.Close();
                 MessageBox.Show(ex.Message);
+                Console.WriteLine(ex.Message);
                 return;
             }
 
@@ -58,7 +69,9 @@ namespace NGANHANG.Process
             Program.myReader.Read();
 
 
-            Program.username = Program.myReader.GetString(0);     // Lay user name
+            Program.username = Program.myReader.GetString(0);
+
+            // Lay user name
             if (Convert.IsDBNull(Program.username))
             {
                 MessageBox.Show("Login bạn nhập không có quyền truy cập dữ liệu\n Bạn xem lại username, password", "", MessageBoxButtons.OK);
@@ -69,6 +82,10 @@ namespace NGANHANG.Process
                 Program.username = Program.myReader.GetString(0);
                 Program.mHoten = Program.myReader.GetString(1);
                 Program.mGroup = Program.myReader.GetString(2);
+
+                /*Console.WriteLine("Program mGroup", Program.mGroup);*/
+
+                MessageBox.Show("Đăng nhập thành công tài khoản \n- Mã NV: " + Program.username + "\n- Tên: " + Program.mHoten + "\n- Nhóm: " + Program.mGroup, "", MessageBoxButtons.OK);
             }
             catch (System.Data.SqlTypes.SqlNullValueException)
             {
